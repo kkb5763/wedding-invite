@@ -1,7 +1,7 @@
 import './index.css';
 import { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, DocumentData } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
 
 // Firebase 설정 (Firebase 콘솔에서 복사해온 값으로 대체해야 함)
 const firebaseConfig = {
