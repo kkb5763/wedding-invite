@@ -118,7 +118,7 @@ function App() {
             </form>
             <ul className="mt-6 space-y-2 text-left">
               {guestbook.map((entry, idx) => (
-                <li key={idx} className="p-3 border rounded-xl bg-gray-50">
+                <li key={idx} className="p-3 border rounded-xl bg-gray-50 text-gray-800">
                   <strong>{entry.name}</strong>: {entry.message}
                 </li>
               ))}
