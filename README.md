@@ -32,3 +32,11 @@ git push origin develop
 npm run deploy
 
 이후 1~2분 기다리기
+
+# UI 꾸미기 
+
+npm install -D tailwindcss@3.4.1 postcss autoprefixer
+npx tailwindcss init -p
+
+
+# 방명록 firebase 연동처리

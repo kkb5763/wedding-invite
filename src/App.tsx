@@ -1,7 +1,7 @@
 import './index.css';
 import { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, DocumentData } from 'firebase/firestore';
 
 // Firebase 설정 (Firebase 콘솔에서 복사해온 값으로 대체해야 함)
 const firebaseConfig = {
@@ -16,9 +16,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+type GuestbookEntry = {
+  name: string;
+  message: string;
+  timestamp: any;
+};
+
 function App() {
   const [current, setCurrent] = useState(0);
-  const [guestbook, setGuestbook] = useState([]);
+  const [guestbook, setGuestbook] = useState<GuestbookEntry[]>([]);
   const [form, setForm] = useState({ name: '', message: '' });
   const images = [
     `/images/wedding-1.png`,
@@ -34,12 +40,12 @@ function App() {
   useEffect(() => {
     const q = query(collection(db, 'guestbook'), orderBy('timestamp', 'desc'));
     const unsubscribe = onSnapshot(q, (snapshot) => {
-      setGuestbook(snapshot.docs.map(doc => doc.data()));
+      setGuestbook(snapshot.docs.map(doc => doc.data() as GuestbookEntry));
     });
     return () => unsubscribe();
   }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.message) return;
     await addDoc(collection(db, 'guestbook'), {
