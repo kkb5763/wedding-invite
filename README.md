@@ -25,6 +25,7 @@ npm install gh-pages --save-dev ==> remote git 에 git -page 관련 설정
 ----------------------------------------------------
 
 # 소스 수정 후, git page 반영
+git add .
 git commit -m "💍 fix: message"
 git push origin develop
 
