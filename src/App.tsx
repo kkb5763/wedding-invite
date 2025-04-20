@@ -76,7 +76,7 @@ function App() {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">메시지</label>
-                <textarea rows="3" placeholder="축하 메시지를 남겨주세요" className="w-full p-2 border border-gray-300 rounded"></textarea>
+                <textarea rows={3} placeholder="축하 메시지를 남겨주세요" className="w-full p-2 border border-gray-300 rounded"></textarea>
               </div>
               <button type="submit" className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full">
                 남기기
