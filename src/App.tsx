@@ -9,7 +9,7 @@ function App() {
         범계역 인근 예식장
       </p>
       <img
-        src="/images/wedding.png"
+        src={`${import.meta.env.BASE_URL}images/wedding.png`}
         alt="결혼사진"
         className="mx-auto my-4 rounded-xl shadow-md max-w-xs"
       />
