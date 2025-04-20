@@ -106,11 +106,11 @@ function App() {
             <form onSubmit={handleSubmit} className="text-left space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700">이름</label>
-                <input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} type="text" placeholder="이름을 입력해주세요" className="w-full p-2 border border-gray-300 rounded" />
+                <input value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} type="text" placeholder="이름을 입력해주세요" className="w-full p-2 border border-yellow-300 bg-[#fffdf7] text-blue-700 placeholder:text-pink-400 rounded" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">메시지</label>
-                <textarea rows={3} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} placeholder="축하 메시지를 남겨주세요" className="w-full p-2 border border-gray-300 rounded"></textarea>
+                <textarea rows={3} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} placeholder="축하 메시지를 남겨주세요" className="w-full p-2 border border-yellow-300 bg-[#fffdf7] text-blue-700 placeholder:text-pink-400 rounded"></textarea>
               </div>
               <button type="submit" className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full">
                 남기기
